@@ -1,0 +1,17 @@
+FROM python:2.7-stretch
+
+ENV PYTHONPATH abc/edf
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update
+
+# TODO: Find better way to get list of deps for lxml and ODBC?
+RUN apt-get install -y unixodbc unixodbc-dev
+RUN apt-get install -y libxml2-dev libxslt1-dev libz-dev
+RUN apt-get install -y python-dev default-libmysqlclient-dev
+RUN apt-get autoremove -y && apt-get clean
+RUN mkdir ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+RUN pip install -U pip setuptools
+
+CMD ["python", ""]
