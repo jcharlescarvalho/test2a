@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <LangVersion>7.1</LangVersion>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenRasta.Hosting.AspNet\OpenRasta.Hosting.AspNet.csproj" Condition="'$(TargetFramework)' == 'net461'" />
+    <ProjectReference Include="..\OpenRasta.Plugins.Caching\OpenRasta.Plugins.Caching.csproj" />
+    <ProjectReference Include="..\OpenRasta.Plugins.Diagnostics\OpenRasta.Plugins.Diagnostics.csproj" />
+    <ProjectReference Include="..\OpenRasta.Plugins.Hydra\OpenRasta.Plugins.Hydra.csproj" />
+    <ProjectReference Include="..\OpenRasta.Plugins.ReverseProxy\OpenRasta.Plugins.ReverseProxy.csproj" />
+    <ProjectReference Include="..\OpenRasta.Hosting.AspNetCore\OpenRasta.Hosting.AspNetCore.csproj" />
+    <ProjectReference Include="..\OpenRasta.Codecs.Newtonsoft.Json\OpenRasta.Codecs.Newtonsoft.Json.csproj" />
+    <ProjectReference Include="..\OpenRasta.Hosting.Katana\OpenRasta.Hosting.Katana.csproj" />
+    <ProjectReference Include="..\OpenRasta\OpenRasta.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.2" />
+    <PackageReference Include="Microsoft.Owin.Testing" Version="4.0.0" />
+    <PackageReference Include="Shouldly" Version="3.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins.Caching\attributes\client" />
+  </ItemGroup>
+</Project>

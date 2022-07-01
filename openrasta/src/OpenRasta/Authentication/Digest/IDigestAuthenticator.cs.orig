@@ -1,0 +1,24 @@
+<<<<<<< HEAD
+﻿using System;
+
+namespace OpenRasta.Authentication.Digest
+{
+    [Obsolete("Authentication features are moving to a new package, see more information at http://https://github.com/openrasta/openrasta/wiki/Authentication")]
+    public interface IDigestAuthenticator
+    {
+        string Realm { get; }
+        AuthenticationResult Authenticate(DigestAuthRequestParameters header);
+    }
+=======
+﻿using System;
+
+namespace OpenRasta.Authentication.Digest
+{
+    [Obsolete]
+    public interface IDigestAuthenticator
+    {
+        string Realm { get; }
+        AuthenticationResult Authenticate(DigestAuthRequestParameters header);
+    }
+>>>>>>> 507a922... Reintroduce IAuthentication
+}
